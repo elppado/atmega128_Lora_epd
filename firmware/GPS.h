@@ -71,6 +71,7 @@ GPS_time_str Time_data = {0,0,0,"99h99m99s"};
 char GPS_raw[55] = " ";
 
 unsigned char GPS_error[] = "GPS not connected!";
+unsigned char no_response[] = "No response!";
 
 
 unsigned char GPS_lati[15] = " ";
@@ -333,7 +334,7 @@ void GPS_dis(void){
         cnt ++;
         
         if (cnt >1000) {
-            //str_to_epd(GPS_error,RX_x,RX_y);
+            str_to_epd(no_response,RX_x,RX_y);
             return;
         }
     }
