@@ -285,6 +285,7 @@ void GPS_return(void){
     
     word_UART1(DC2); // lati 알림 플래그
     str_UART1(GPS_lati);
+    _delay_ms(100);
     word_UART1(DC3); // logi 알림 플래그
     str_UART1(GPS_logi);
 }
@@ -364,7 +365,6 @@ void GPS_dis(void){
     str_to_epd(tmp_dis_str,RX_x,RX_y);
     
     SSound(Mi);
-    SSound(Si);
     SSound(Si);
 }
 

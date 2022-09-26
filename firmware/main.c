@@ -36,7 +36,7 @@
 
 unsigned char TX_str[MAX_LEN];
 unsigned char RX_str[MAX_LEN];
-const unsigned char erase_str[MAX_LEN] = "                      ";
+const unsigned char erase_str[MAX_LEN] = " ";
 
 
 const unsigned char GPS_comm[] = "$gps";

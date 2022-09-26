@@ -26,7 +26,6 @@ unsigned char buzz_flag = 1; // 1 = buzzer ON, 0 == buzzer OFF;
 
 void interrupt_init(){
     
-
     EIMSK |= 0x02; // INT1 인터럽트 활성화
     EICRA |= 0x08; // INT1 하강엣지
     sei();
@@ -46,6 +45,7 @@ void myDelay_us(unsigned int delay){
         _delay_us(1);
     }
 }
+
 
 void SSound(int time) {
     

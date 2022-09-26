@@ -36,9 +36,6 @@
 
 //250*122///////////////////////////////////////
 
-//#define MONOMSB_MODE 1
-//#define MONOLSB_MODE 2
-//#define RED_MODE     3
 
 #define MAX_LINE_BYTES 16// =128/8
 #define MAX_COLUMN_BYTES  250
