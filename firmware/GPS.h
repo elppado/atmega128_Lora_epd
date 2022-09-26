@@ -320,7 +320,7 @@ void GPS_dis(void){
     
     int cnt = 0;
     
-    unsigned char tmp_dis_str[10] = "";
+    unsigned char tmp_dis_str[10] = " ";
     
 
     
