@@ -17,7 +17,6 @@
 		674EB1882894FFE100AA2F1A /* font_B.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = font_B.h; sourceTree = "<group>"; };
 		677455AC28AFD8D800A59E03 /* font_W.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = font_W.h; sourceTree = "<group>"; };
 		677E178F28B8D8670096BA1B /* GPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPS.h; sourceTree = "<group>"; };
-		677E17E228BF73430096BA1B /* uart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uart.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -40,7 +39,6 @@
 				674EB1882894FFE100AA2F1A /* font_B.h */,
 				674EB1862894FFE100AA2F1A /* keyscan.h */,
 				677E178F28B8D8670096BA1B /* GPS.h */,
-				677E17E228BF73430096BA1B /* uart.h */,
 				673DDE0028C836CF00E328FD /* GPS_backup.h */,
 			);
 			path = firmware;
