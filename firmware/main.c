@@ -7,7 +7,7 @@
 
 
 //#define dev_colour_BLACK
-//#define dev_colour_WHITE
+#define dev_colour_WHITE
 
 
 #include <avr/io.h>

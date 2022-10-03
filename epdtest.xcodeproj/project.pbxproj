@@ -9,6 +9,7 @@
 /* Begin PBXFileReference section */
 		4079525E0CEA38CC00E202DC /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		4079525F0CEA38CC00E202DC /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		672CB84728EA9DCF00C7FC42 /* PCB */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PCB; sourceTree = SOURCE_ROOT; };
 		673DDE0028C836CF00E328FD /* GPS_backup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPS_backup.h; sourceTree = "<group>"; };
 		674EB1852894FFE100AA2F1A /* buzz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = buzz.h; sourceTree = "<group>"; };
 		674EB1862894FFE100AA2F1A /* keyscan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = keyscan.h; sourceTree = "<group>"; };
@@ -23,6 +24,7 @@
 		4079523B0CEA382200E202DC = {
 			isa = PBXGroup;
 			children = (
+				672CB84728EA9DCF00C7FC42 /* PCB */,
 				4079525D0CEA38CC00E202DC /* firmware */,
 			);
 			sourceTree = "<group>";

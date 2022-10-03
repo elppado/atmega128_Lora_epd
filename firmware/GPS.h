@@ -303,6 +303,7 @@ void get_time(void){
     str_to_epd(Time_data.GPS_time,RX_x,RX_y);
 }
 
+
 void GPS_dis(void){
     SSound(Do);
     
