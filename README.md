@@ -1,4 +1,4 @@
-# atmega128_Lora_epd
+# Atmega128_Lora_epd  wire-less Chat
 
 ## atmega128, LoRa, epd module test
 
