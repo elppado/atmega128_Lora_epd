@@ -29,7 +29,6 @@
 #endif
 
 
-
 #define MAX_LEN 23
 
 
@@ -37,7 +36,6 @@
 unsigned char TX_str[MAX_LEN];
 unsigned char RX_str[MAX_LEN];
 const unsigned char erase_str[MAX_LEN] = " ";
-
 
 const unsigned char GPS_comm[] = "$gps";
 const unsigned char GPS_dis_comm[]= "$dis";
@@ -53,22 +51,18 @@ unsigned char rx_flag = 1;
 
 
 
-void str_to_epd(const unsigned char *str,unsigned char x, unsigned char y){
+void str_to_epd(const unsigned char *str,unsigned char x, unsigned char y){ //str을 화면에 출력
     
     for (unsigned char i = 0; *(str+i) != '\0'; i++) {
-        
         EPD_HW_Init(); // deepsleep 이후에 HW reset으로 꺠우기
         EPD_Dis_Part(x,y+(i*9),epd_font[(*(str+i)-32)],8,16);
         EPD_DeepSleep();
-
     }
 }
 
 
-void rx_str_sum(unsigned char *str, const unsigned char val){
-    
+void rx_str_sum(unsigned char *str, const unsigned char val){   //rx data 저장
     for (int i = 0; i < MAX_LEN; i++){
-        
         if (*(str+i) == '\0'){
             *(str+i) = val;
             *(str+i+1) = '\0';
@@ -78,17 +72,14 @@ void rx_str_sum(unsigned char *str, const unsigned char val){
     }
 }
 
-void str_sum(unsigned char *str, const unsigned char val){
-        
+void str_sum(unsigned char *str, const unsigned char val){  // 키보드 입력 문자 덧셈
     *(str+flag) = val;
     *(str+flag+1) = '\0';
-    
     flag++;
 }
 
 
-void init_UART1(unsigned char baud){
-    
+void init_UART1(unsigned char baud){    // uart1 init
     UBRR1H = (unsigned char)(baud >> 8);
     UBRR1L = (unsigned char)baud;
     
@@ -97,58 +88,50 @@ void init_UART1(unsigned char baud){
     UCSR1B &= ~(1 << UCSZ12);
     UCSR1C &= ~( 1 << UMSEL1) & ~( 1 << UPM11) & ~( 1 << UPM10) & ~( 1 << USBS1);
     UCSR1C |= (1<<UCSZ11) | (1 << UCSZ10);
-    
 }
 
 
-void word_UART1(const unsigned char data){
-    
+void word_UART1(const unsigned char data){  // uart rx word 가져오기
     while( !(UCSR1A & (1<<UDRE1)));
     UDR1 = data;
 }
 
 
-void str_UART1(const unsigned char *str){
-    
+void str_UART1(const unsigned char *str){   // uart rx str 가져오기
     while (*str != '\0') {
         word_UART1(*str);
         str++;
     }
     word_UART1(CR);
     word_UART1(LF);
-    
 }
 
 
 
 void comm_find(void){
-    
     switch (RX_str[0]) {
-            
-        case DC1:
+        case DC1:   // case GPS
             GPS_return();
             break;
             
-        case DC2:
+        case DC2:   // case Lati
             for (unsigned char i = 0; RX_str[i] != 0; i++)
                 you_GPS_lati[i] = RX_str[i+1];
             GPS_return_logi_flag = 0;
             break;
             
-        case DC3:
+        case DC3:   // case logi
             for (unsigned char i = 0; RX_str[i] != 0; i++)
                 you_GPS_logi[i] = RX_str[i+1];
             GPS_return_lati_flag = 0;
             break;
             
-        default:
-            
+        default:    // 일반 메세지 처리
             SSound(Do);
             SSound(Re);
             str_to_epd(RX_str,RX_x,RX_y);
             break;
     }
-    
     for (unsigned char i = 0; i < MAX_LEN; i++)
         RX_str[i] = '\0';
 }
@@ -163,21 +146,16 @@ void comm_find(void){
 
 ISR(USART1_RX_vect){ //  UART RX 인터럽트
     unsigned char ch = UDR1;
-    
     if ((ch != CR) && (ch != LF)) {
         rx_str_sum(RX_str,ch);
     }
-    
     else if (ch == LF){
-        
         comm_find();
     }
 }
 
 
-
 void init_port(){
-    
     DDRA = 0xff;
     DDRD |= (1 << PD7);
     DDRD &= ~(1 << PD1);
@@ -219,27 +197,20 @@ int main(void){
             if (kval != '\0'){ // 리턴값이 \0 (사용하지 않는 키패드) 이면서
                 EPD_HW_Init();
                 
-                
                 switch (kval) {
-                        
                     case CR:
-                        
-                        
-                        if (TX_str[0] == '$') {
+                        if (TX_str[0] == '$') {    // 특수 호출 메세지 시작값
                             
                             if ((TX_str[1] == GPS_comm[1]) && (TX_str[2] == GPS_comm[2]) && (TX_str[3] == GPS_comm[3]))  {
                                 EPD_SetRAMValue_BaseMap(gImage_1);
                                 EPD_DeepSleep();
                                 GPS();
-                                
-                                
                             }
                             else if ((TX_str[1] == GPS_dis_comm[1]) && (TX_str[2] == GPS_dis_comm[2]) && (TX_str[3] == GPS_dis_comm[3])){
                                 EPD_SetRAMValue_BaseMap(gImage_1);
                                 EPD_DeepSleep();
                                 GPS_dis();
                             }
-                            
                             else if ((TX_str[1] == Time_comm[1]) && (TX_str[2] == Time_comm[2]) && (TX_str[3] == Time_comm[3]) && (TX_str[4] == Time_comm[4])){
                                 EPD_SetRAMValue_BaseMap(gImage_1);
                                 EPD_DeepSleep();
@@ -271,12 +242,10 @@ int main(void){
                         if (str_po < 0)
                             str_po = 0;
                         
-        
                         flag--; //문자열 합치기--
                         
                         if (flag < 0)
                             flag = 0;
-                        
                         
                         EPD_HW_Init();
                         EPD_Dis_Part(TX_x,TX_y+(str_po*9),epd_font[0],8,16);
@@ -300,6 +269,3 @@ int main(void){
         }
     }
 }
-
-// 커서구현 타이머 카운터로 3s마다 커서 표시 flag, (TX_x - 10)위치에 막대/
-// EPD_DeepSleep(); 및 EPD_HW_Init(); 위치
