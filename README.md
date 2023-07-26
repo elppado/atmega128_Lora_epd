@@ -5,7 +5,7 @@
 
 
 
-### BOM
+## BOM
 Lora : NMT-UD434R0
 
 Display : 2.13 inch EInk e-paper Display 250*122
