@@ -2,7 +2,7 @@
 ## [ LoRa와 ePaper를 사용한 AVR 기반 저전력 다용도 통신 단말 ]
 
 
-### 🚙 프로젝트 소개
+### 🚀 프로젝트 소개
 ------
 atmega128과 Lora 모듈, 전자잉크 디스플레이를 사용하여 무선 채팅기 개발
 
@@ -17,7 +17,7 @@ atmega128과 Lora 모듈, 전자잉크 디스플레이를 사용하여 무선 �
 * **Tool** : xcode(avrdude_cross compile), kicad, fusion360
 
 
-### BOM
+### 📋 BOM
 Lora : NMT-UD434R0
 
 Display : 2.13 inch EInk e-paper Display 250*122
