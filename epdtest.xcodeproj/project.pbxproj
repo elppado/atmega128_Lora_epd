@@ -17,12 +17,14 @@
 		674EB1882894FFE100AA2F1A /* font_B.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = font_B.h; sourceTree = "<group>"; };
 		677455AC28AFD8D800A59E03 /* font_W.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = font_W.h; sourceTree = "<group>"; };
 		677E178F28B8D8670096BA1B /* GPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPS.h; sourceTree = "<group>"; };
+		67BF01B82AFFA4AC00ECD66C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		4079523B0CEA382200E202DC = {
 			isa = PBXGroup;
 			children = (
+				67BF01B82AFFA4AC00ECD66C /* .gitignore */,
 				672CB84728EA9DCF00C7FC42 /* PCB */,
 				4079525D0CEA38CC00E202DC /* firmware */,
 			);

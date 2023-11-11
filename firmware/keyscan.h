@@ -33,7 +33,7 @@ unsigned char keyScan(void){
 	//키패드로 입력받는 함수
 	unsigned char key_num = 0;
 	unsigned char getPinData = 0;
-	
+
 	key_scan_line = 0xf7;
 
 	for(Key_Scan_sel = 0; Key_Scan_sel < 5; Key_Scan_sel++){
