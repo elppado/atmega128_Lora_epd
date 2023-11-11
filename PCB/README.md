@@ -8,4 +8,5 @@
 ### Schematic
 
 
-![LLatmega128_e_paper_9_1](https://github.com/elppado/atmega128_Lora_epd/assets/109073690/bfc84891-affa-4051-ba58-48fe45b8c0b0)
+<img width="1073" alt="image" src="https://github.com/elppado/atmega128_Lora_epd/assets/109073690/d349ab5b-692e-47fb-9bb2-225c49c7eca8">
+
