@@ -12,12 +12,22 @@ atmega128과 Lora 모듈, 전자잉크 디스플레이를 사용하여 무선 �
 ### 🕰️ 개발 기간
 * 22.07 ~ 22.09
 
+
+### 📋 개발내용
+------
+- [Schematic](https://github.com/elppado/atmega128_Lora_epd/tree/main/PCB)
+- [F/W](https://github.com/elppado/atmega128_Lora_epd/tree/main/firmware)  
+
+
+
 ### ⚙️ 개발환경
+-----
 * C
 * **Tool** : xcode(avrdude_cross compile), kicad, fusion360
 
 
 ### 📋 BOM
+------
 Lora : NMT-UD434R0
 
 Display : 2.13 inch EInk e-paper Display 250*122
